@@ -1,0 +1,3 @@
+/mnt/hgfs/VMwareSharedFiles/sylar/sylar/build/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/VMwareSharedFiles/sylar/sylar/build/CMakeFiles/sylar.dir
+/mnt/hgfs/VMwareSharedFiles/sylar/sylar/build/CMakeFiles/edit_cache.dir
