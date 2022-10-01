@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/test.dir/test.o  -o /home/edinw/workspace/sylar/bin/test  -L../../lib -Wl,-rpath,../../lib -lsylar 

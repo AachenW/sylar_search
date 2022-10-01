@@ -12,12 +12,13 @@
 #include <map>
 #include "util.h"
 #include "singleton.h"
+#include "thread.h"
 
 #define SYLAR_LOG_LEVEL(logger, level) \
     if(logger->getLevel() <= level) \
         sylar::LogEventWrap(sylar::LogEvent::ptr(new sylar::LogEvent(logger, level, \
                         __FILE__, __LINE__, 0, sylar::GetThreadId(),\
-                sylar::GetFiberId(), time(0), sylar::Thread::GetName()))).getSS()
+                sylar::GetFiberId(), time(0)))).getSS()
 
 #define SYLAR_LOG_DEBUG(logger) SYLAR_LOG_LEVEL(logger, sylar::LogLevel::DEBUG)
 #define SYLAR_LOG_INFO(logger) SYLAR_LOG_LEVEL(logger, sylar::LogLevel::INFO)
@@ -29,7 +30,7 @@
     if(logger->getLevel() <= level) \
         sylar::LogEventWrap(sylar::LogEvent::ptr(new sylar::LogEvent(logger, level, \
                         __FILE__, __LINE__, 0, sylar::GetThreadId(),\
-                sylar::GetFiberId(), time(0), sylar::Thread::GetName()))).getEvent()->format(fmt, __VA_ARGS__)
+                sylar::GetFiberId(), time(0)))).getEvent()->format(fmt, __VA_ARGS__)
 
 #define SYLAR_LOG_FMT_DEBUG(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::DEBUG, fmt, __VA_ARGS__)
 #define SYLAR_LOG_FMT_INFO(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::INFO, fmt, __VA_ARGS__)
@@ -38,6 +39,7 @@
 #define SYLAR_LOG_FMT_FATAL(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::FATAL, fmt, __VA_ARGS__)
 
 #define SYLAR_LOG_ROOT() sylar::LoggerMgr::GetInstance()->getRoot()
+#define SYLAR_LOG_NAME(name) sylar::LoggerMgr::GetInstance()->getLogger(name)
 
 namespace sylar {
 
@@ -56,7 +58,7 @@ public:
 		FATAL
 	};
 	static const char* ToString(LogLevel::Level level);
-	static LogLevel::Level FromString(const std::string& str);
+	static LogLevel::Level FromString(const std::string& str); 
 };
 
 // 日志事件
@@ -100,6 +102,7 @@ class LogEventWrap {
 public:
     LogEventWrap(LogEvent::ptr e);
     ~LogEventWrap();
+	LogEvent::ptr getEvent() const { return m_event;}
     std::stringstream& getSS();
 private:
     LogEvent::ptr m_event;
@@ -123,6 +126,7 @@ public:
 	};
 	void init();
 	const std::string getPattern() const { return m_pattern;}
+	bool isError() const { return m_error;}
 private:
 	std::string m_pattern;					// 日志格式模版
 	std::vector<FormatItem::ptr> m_items;	// 日志格式解析后格式
@@ -131,18 +135,24 @@ private:
 
 // 日志输出池
 class LogAppender {
+	friend class Logger;
 public:
 	typedef std::shared_ptr<LogAppender> ptr;
+	typedef SpinLock MutexType;
 	virtual ~LogAppender() {}
 	
 	virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) = 0;
+	virtual std::string toYamlString() = 0;
 	
-	void setFormatter(LogFormatter::ptr val) { m_formatter = val; }
-	LogFormatter::ptr getFormatter() const { return m_formatter; }
+	void setFormatter(LogFormatter::ptr val);
+	LogFormatter::ptr getFormatter();
+
     LogLevel::Level getLevel() const { return m_level; }
     void setLevel(LogLevel::Level val) { m_level = val; }
 protected:
 	LogLevel::Level m_level = LogLevel::DEBUG;
+	bool m_hasFormatter = false;
+	MutexType m_mutex;
 	LogFormatter::ptr m_formatter;
 };
 
@@ -151,6 +161,7 @@ class Logger : public std::enable_shared_from_this<Logger> {
 	friend class LoggerManager;
 public:
 	typedef std::shared_ptr<Logger> ptr;
+	typedef SpinLock MutexType;
 	Logger(const std::string& name = "root");
 	void log(LogLevel::Level level, LogEvent::ptr event);
 
@@ -162,13 +173,21 @@ public:
 	
 	void addAppender(LogAppender::ptr appender);
 	void delAppender(LogAppender::ptr appender);
+	void clearAppender();
 	LogLevel::Level getLevel() const { return m_level;}
 	void setLevel(LogLevel::Level val) { m_level = val;}
 
 	const std::string& getName() const { return m_name;}
+
+	void setFormatter(LogFormatter::ptr val);
+	void setFormatter(const std::string& val);
+	LogFormatter::ptr getFormatter();
+
+	std::string toYamlString();
 private:
 	std::string m_name;							// 日志名称
 	LogLevel::Level m_level;					// 日志级别
+	MutexType m_mutex;
 	std::list<LogAppender::ptr> m_appenders;	// Appender集合
     LogFormatter::ptr m_formatter;				// 日志格式器
 	Logger::ptr m_root;							// 主日志器
@@ -179,6 +198,7 @@ class StdoutLogAppender : public LogAppender {
 public:
 	typedef std::shared_ptr<StdoutLogAppender> ptr;
 	virtual void log(Logger::ptr logger, LogLevel::Level level, LogEvent::ptr event) override;
+	std::string toYamlString() override;
 };
 
 // 定义输出到文件的Appender
@@ -187,6 +207,7 @@ public:
 	typedef std::shared_ptr<FileLogAppender> ptr;
 	FileLogAppender(const std::string& filename);
 	virtual void log(Logger::ptr logger, LogLevel::Level level, LogEvent::ptr event) override;
+	std::string toYamlString() override;
 
 	bool reopen();
 private:
@@ -198,12 +219,16 @@ private:
 
 class LoggerManager {
 public:
+	typedef SpinLock MutexType;
     LoggerManager();
     Logger::ptr getLogger(const std::string& name);
 
     void init();
     Logger::ptr getRoot() const { return m_root;}
+
+	std::string toYamlString();
 private:
+	MutexType m_mutex;
     std::map<std::string, Logger::ptr> m_loggers;		// 日志器容器
     Logger::ptr m_root;									// 主日志器
 };

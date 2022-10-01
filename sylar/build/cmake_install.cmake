@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/hgfs/VMwareSharedFiles/sylar/sylar
+# Install script for directory: /home/edinw/workspace/sylar/sylar
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/hgfs/VMwareSharedFiles/sylar/sylar/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/edinw/workspace/sylar/sylar/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/test_config.dir/test_config.cc.o  -o /home/edinw/workspace/sylar/bin/test_config  -L/home/edinw/workspace/sylar/lib -Wl,-rpath,/home/edinw/workspace/sylar/lib -lsylar 

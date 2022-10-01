@@ -1,0 +1,4 @@
+/home/edinw/workspace/sylar/tests/build/CMakeFiles/rebuild_cache.dir
+/home/edinw/workspace/sylar/tests/build/CMakeFiles/edit_cache.dir
+/home/edinw/workspace/sylar/tests/build/CMakeFiles/test01.dir
+/home/edinw/workspace/sylar/tests/build/CMakeFiles/test_config.dir

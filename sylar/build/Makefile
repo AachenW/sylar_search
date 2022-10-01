@@ -23,9 +23,6 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -51,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/hgfs/VMwareSharedFiles/sylar/sylar
+CMAKE_SOURCE_DIR = /home/edinw/workspace/sylar/sylar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/hgfs/VMwareSharedFiles/sylar/sylar/build
+CMAKE_BINARY_DIR = /home/edinw/workspace/sylar/sylar/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -83,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMwareSharedFiles/sylar/sylar/build/CMakeFiles /mnt/hgfs/VMwareSharedFiles/sylar/sylar/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/edinw/workspace/sylar/sylar/build/CMakeFiles /home/edinw/workspace/sylar/sylar/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMwareSharedFiles/sylar/sylar/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/edinw/workspace/sylar/sylar/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -180,6 +177,33 @@ log.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/log.cc.s
 .PHONY : log.cc.s
 
+thread.o: thread.cc.o
+
+.PHONY : thread.o
+
+# target to build an object file
+thread.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/thread.cc.o
+.PHONY : thread.cc.o
+
+thread.i: thread.cc.i
+
+.PHONY : thread.i
+
+# target to preprocess a source file
+thread.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/thread.cc.i
+.PHONY : thread.cc.i
+
+thread.s: thread.cc.s
+
+.PHONY : thread.s
+
+# target to generate assembly for a file
+thread.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/thread.cc.s
+.PHONY : thread.cc.s
+
 util.o: util.cc.o
 
 .PHONY : util.o
@@ -222,6 +246,9 @@ help:
 	@echo "... log.o"
 	@echo "... log.i"
 	@echo "... log.s"
+	@echo "... thread.o"
+	@echo "... thread.i"
+	@echo "... thread.s"
 	@echo "... util.o"
 	@echo "... util.i"
 	@echo "... util.s"
