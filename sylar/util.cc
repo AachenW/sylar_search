@@ -1,7 +1,8 @@
 #include "util.h"
 #include <execinfo.h>
-
+#include <sys/time.h>
 #include "log.h"
+#include "fiber.h"
 
 namespace sylar {
 
@@ -12,10 +13,10 @@ pid_t GetThreadId() {
 }
 
 uint32_t GetFiberId() {
-    return 0;
+    return sylar::Fiber::GetFiberId();
 }
 
-void Backtrace(std::vector<std::string>& bt, int size = 64, int skip = 1) {
+void Backtrace(std::vector<std::string>& bt, int size, int skip) {
     void** array = (void**)malloc((sizeof(void*) * size));
     size_t s = ::backtrace(array, size);
 
@@ -33,7 +34,7 @@ void Backtrace(std::vector<std::string>& bt, int size = 64, int skip = 1) {
     free(array);
 }
 
-std::string BacktraceToString(int size = 64, int skip = 2, const std::string& prefix) {
+std::string BacktraceToString(int size, int skip, const std::string& prefix) {
     std::vector<std::string> bt;
     Backtrace(bt, size, skip);
     std::stringstream ss;
@@ -43,6 +44,16 @@ std::string BacktraceToString(int size = 64, int skip = 2, const std::string& pr
     return ss.str();
 }
 
-
-
+uint64_t GetCurrentMS() {
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    return tv.tv_sec * 1000ul + tv.tv_usec / 1000;
 }
+
+uint64_t GetCurrentUS() {
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    return tv.tv_sec * 1000 * 1000ul + tv.tv_usec;
+}
+
+} // namespace sylar

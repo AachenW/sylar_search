@@ -79,7 +79,18 @@
         "algorithm": "cpp",
         "functional": "cpp",
         "iterator": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "*.tcc": "cpp",
+        "numeric": "cpp",
+        "thread": "cpp",
+        "strstream": "cpp",
+        "memory_resource": "cpp",
+        "random": "cpp",
+        "cfenv": "cpp",
+        "cinttypes": "cpp",
+        "typeindex": "cpp",
+        "valarray": "cpp",
+        "condition_variable": "cpp"
     },
     "cmake.configureOnOpen": false
 }

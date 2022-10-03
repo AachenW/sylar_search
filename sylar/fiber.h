@@ -8,6 +8,7 @@
 namespace sylar {
 
 class Fiber : public std::enable_shared_from_this<Fiber> {
+    friend class Scheduler;
 public:
     typedef std::shared_ptr<Fiber> ptr;
     enum State {
@@ -120,7 +121,7 @@ private:
     void* m_stack = nullptr;
     /// @brief 协程运行函数
     std::function<void()> m_cb;
-}；
+};
 
 }
 

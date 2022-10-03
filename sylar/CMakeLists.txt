@@ -17,12 +17,24 @@ message("***", $(YAMLCPP))
 
 add_library(sylar SHARED
     config.h    
+    fiber.h
+    iomanager.h
     log.h
+    marco.h
+    mutex.h
+    scheduler.h
     singleton.h
+    sylar.h
     thread.h
+    timer.h
     util.h
     config.cc
+    fiber.cc
+    iomanager.cc
     log.cc
+    mutex.cc
+    scheduler.cc
     thread.cc
+    timer.cc
     util.cc
 )

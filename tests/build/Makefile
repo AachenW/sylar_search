@@ -111,84 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test01
+# Target rules for targets named test_iomanager
 
 # Build rule for target.
-test01: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test01
-.PHONY : test01
+test_iomanager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_iomanager
+.PHONY : test_iomanager
 
 # fast build rule for target.
-test01/fast:
-	$(MAKE) -f CMakeFiles/test01.dir/build.make CMakeFiles/test01.dir/build
-.PHONY : test01/fast
+test_iomanager/fast:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
+.PHONY : test_iomanager/fast
 
-#=============================================================================
-# Target rules for targets named test_config
+test_iomanager.o: test_iomanager.cc.o
 
-# Build rule for target.
-test_config: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_config
-.PHONY : test_config
-
-# fast build rule for target.
-test_config/fast:
-	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
-.PHONY : test_config/fast
-
-test.o: test.cc.o
-
-.PHONY : test.o
+.PHONY : test_iomanager.o
 
 # target to build an object file
-test.cc.o:
-	$(MAKE) -f CMakeFiles/test01.dir/build.make CMakeFiles/test01.dir/test.cc.o
-.PHONY : test.cc.o
+test_iomanager.cc.o:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/test_iomanager.cc.o
+.PHONY : test_iomanager.cc.o
 
-test.i: test.cc.i
+test_iomanager.i: test_iomanager.cc.i
 
-.PHONY : test.i
-
-# target to preprocess a source file
-test.cc.i:
-	$(MAKE) -f CMakeFiles/test01.dir/build.make CMakeFiles/test01.dir/test.cc.i
-.PHONY : test.cc.i
-
-test.s: test.cc.s
-
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.cc.s:
-	$(MAKE) -f CMakeFiles/test01.dir/build.make CMakeFiles/test01.dir/test.cc.s
-.PHONY : test.cc.s
-
-test_config.o: test_config.cc.o
-
-.PHONY : test_config.o
-
-# target to build an object file
-test_config.cc.o:
-	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/test_config.cc.o
-.PHONY : test_config.cc.o
-
-test_config.i: test_config.cc.i
-
-.PHONY : test_config.i
+.PHONY : test_iomanager.i
 
 # target to preprocess a source file
-test_config.cc.i:
-	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/test_config.cc.i
-.PHONY : test_config.cc.i
+test_iomanager.cc.i:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/test_iomanager.cc.i
+.PHONY : test_iomanager.cc.i
 
-test_config.s: test_config.cc.s
+test_iomanager.s: test_iomanager.cc.s
 
-.PHONY : test_config.s
+.PHONY : test_iomanager.s
 
 # target to generate assembly for a file
-test_config.cc.s:
-	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/test_config.cc.s
-.PHONY : test_config.cc.s
+test_iomanager.cc.s:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/test_iomanager.cc.s
+.PHONY : test_iomanager.cc.s
 
 # Help Target
 help:
@@ -197,15 +157,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... test_iomanager"
 	@echo "... edit_cache"
-	@echo "... test01"
-	@echo "... test_config"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
-	@echo "... test_config.o"
-	@echo "... test_config.i"
-	@echo "... test_config.s"
+	@echo "... test_iomanager.o"
+	@echo "... test_iomanager.i"
+	@echo "... test_iomanager.s"
 .PHONY : help
 
 

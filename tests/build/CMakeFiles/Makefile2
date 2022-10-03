@@ -60,76 +60,39 @@ CMAKE_SOURCE_DIR = /home/edinw/workspace/sylar/tests
 CMAKE_BINARY_DIR = /home/edinw/workspace/sylar/tests/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/test01.dir
+# Target rules for target CMakeFiles/test_iomanager.dir
 
 # All Build rule for target.
-CMakeFiles/test01.dir/all:
-	$(MAKE) -f CMakeFiles/test01.dir/build.make CMakeFiles/test01.dir/depend
-	$(MAKE) -f CMakeFiles/test01.dir/build.make CMakeFiles/test01.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/edinw/workspace/sylar/tests/build/CMakeFiles --progress-num=1,2 "Built target test01"
-.PHONY : CMakeFiles/test01.dir/all
+CMakeFiles/test_iomanager.dir/all:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/depend
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/edinw/workspace/sylar/tests/build/CMakeFiles --progress-num=1,2 "Built target test_iomanager"
+.PHONY : CMakeFiles/test_iomanager.dir/all
 
 # Include target in all.
-all: CMakeFiles/test01.dir/all
+all: CMakeFiles/test_iomanager.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/test01.dir/rule: cmake_check_build_system
+CMakeFiles/test_iomanager.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/edinw/workspace/sylar/tests/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test01.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_iomanager.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/edinw/workspace/sylar/tests/build/CMakeFiles 0
-.PHONY : CMakeFiles/test01.dir/rule
+.PHONY : CMakeFiles/test_iomanager.dir/rule
 
 # Convenience name for target.
-test01: CMakeFiles/test01.dir/rule
+test_iomanager: CMakeFiles/test_iomanager.dir/rule
 
-.PHONY : test01
-
-# clean rule for target.
-CMakeFiles/test01.dir/clean:
-	$(MAKE) -f CMakeFiles/test01.dir/build.make CMakeFiles/test01.dir/clean
-.PHONY : CMakeFiles/test01.dir/clean
+.PHONY : test_iomanager
 
 # clean rule for target.
-clean: CMakeFiles/test01.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/test_config.dir
-
-# All Build rule for target.
-CMakeFiles/test_config.dir/all:
-	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/depend
-	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/edinw/workspace/sylar/tests/build/CMakeFiles --progress-num=3,4 "Built target test_config"
-.PHONY : CMakeFiles/test_config.dir/all
-
-# Include target in all.
-all: CMakeFiles/test_config.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/test_config.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/edinw/workspace/sylar/tests/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_config.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/edinw/workspace/sylar/tests/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_config.dir/rule
-
-# Convenience name for target.
-test_config: CMakeFiles/test_config.dir/rule
-
-.PHONY : test_config
+CMakeFiles/test_iomanager.dir/clean:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/clean
+.PHONY : CMakeFiles/test_iomanager.dir/clean
 
 # clean rule for target.
-CMakeFiles/test_config.dir/clean:
-	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/clean
-.PHONY : CMakeFiles/test_config.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/test_config.dir/clean
+clean: CMakeFiles/test_iomanager.dir/clean
 
 .PHONY : clean
 

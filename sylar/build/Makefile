@@ -150,6 +150,60 @@ config.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/config.cc.s
 .PHONY : config.cc.s
 
+fiber.o: fiber.cc.o
+
+.PHONY : fiber.o
+
+# target to build an object file
+fiber.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/fiber.cc.o
+.PHONY : fiber.cc.o
+
+fiber.i: fiber.cc.i
+
+.PHONY : fiber.i
+
+# target to preprocess a source file
+fiber.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/fiber.cc.i
+.PHONY : fiber.cc.i
+
+fiber.s: fiber.cc.s
+
+.PHONY : fiber.s
+
+# target to generate assembly for a file
+fiber.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/fiber.cc.s
+.PHONY : fiber.cc.s
+
+iomanager.o: iomanager.cc.o
+
+.PHONY : iomanager.o
+
+# target to build an object file
+iomanager.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/iomanager.cc.o
+.PHONY : iomanager.cc.o
+
+iomanager.i: iomanager.cc.i
+
+.PHONY : iomanager.i
+
+# target to preprocess a source file
+iomanager.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/iomanager.cc.i
+.PHONY : iomanager.cc.i
+
+iomanager.s: iomanager.cc.s
+
+.PHONY : iomanager.s
+
+# target to generate assembly for a file
+iomanager.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/iomanager.cc.s
+.PHONY : iomanager.cc.s
+
 log.o: log.cc.o
 
 .PHONY : log.o
@@ -177,6 +231,60 @@ log.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/log.cc.s
 .PHONY : log.cc.s
 
+mutex.o: mutex.cc.o
+
+.PHONY : mutex.o
+
+# target to build an object file
+mutex.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/mutex.cc.o
+.PHONY : mutex.cc.o
+
+mutex.i: mutex.cc.i
+
+.PHONY : mutex.i
+
+# target to preprocess a source file
+mutex.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/mutex.cc.i
+.PHONY : mutex.cc.i
+
+mutex.s: mutex.cc.s
+
+.PHONY : mutex.s
+
+# target to generate assembly for a file
+mutex.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/mutex.cc.s
+.PHONY : mutex.cc.s
+
+scheduler.o: scheduler.cc.o
+
+.PHONY : scheduler.o
+
+# target to build an object file
+scheduler.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/scheduler.cc.o
+.PHONY : scheduler.cc.o
+
+scheduler.i: scheduler.cc.i
+
+.PHONY : scheduler.i
+
+# target to preprocess a source file
+scheduler.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/scheduler.cc.i
+.PHONY : scheduler.cc.i
+
+scheduler.s: scheduler.cc.s
+
+.PHONY : scheduler.s
+
+# target to generate assembly for a file
+scheduler.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/scheduler.cc.s
+.PHONY : scheduler.cc.s
+
 thread.o: thread.cc.o
 
 .PHONY : thread.o
@@ -203,6 +311,33 @@ thread.s: thread.cc.s
 thread.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/thread.cc.s
 .PHONY : thread.cc.s
+
+timer.o: timer.cc.o
+
+.PHONY : timer.o
+
+# target to build an object file
+timer.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/timer.cc.o
+.PHONY : timer.cc.o
+
+timer.i: timer.cc.i
+
+.PHONY : timer.i
+
+# target to preprocess a source file
+timer.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/timer.cc.i
+.PHONY : timer.cc.i
+
+timer.s: timer.cc.s
+
+.PHONY : timer.s
+
+# target to generate assembly for a file
+timer.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/timer.cc.s
+.PHONY : timer.cc.s
 
 util.o: util.cc.o
 
@@ -243,12 +378,27 @@ help:
 	@echo "... config.o"
 	@echo "... config.i"
 	@echo "... config.s"
+	@echo "... fiber.o"
+	@echo "... fiber.i"
+	@echo "... fiber.s"
+	@echo "... iomanager.o"
+	@echo "... iomanager.i"
+	@echo "... iomanager.s"
 	@echo "... log.o"
 	@echo "... log.i"
 	@echo "... log.s"
+	@echo "... mutex.o"
+	@echo "... mutex.i"
+	@echo "... mutex.s"
+	@echo "... scheduler.o"
+	@echo "... scheduler.i"
+	@echo "... scheduler.s"
 	@echo "... thread.o"
 	@echo "... thread.i"
 	@echo "... thread.s"
+	@echo "... timer.o"
+	@echo "... timer.i"
+	@echo "... timer.s"
 	@echo "... util.o"
 	@echo "... util.i"
 	@echo "... util.s"
