@@ -6,7 +6,9 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ../../lib)
 set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O3 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -Wno-deprecated-declarations")
 set(CMAKE_C_FLAGS "$ENV{CXXFLAGS} -rdynamic -O3 -fPIC -ggdb -std=c11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -Wno-deprecated-declarations")
 
-include_directories(CMAKE_CURRENT_LIST/../)
+set(INCDIRS . include)
+set(SRCDIR src)
+include_directories(${INCDIRS} ${SRCDIR})
 
 find_package(Boost REQUIRED)
 if(Boost_FOUND)
@@ -16,25 +18,30 @@ endif()
 message("***", $(YAMLCPP))
 
 add_library(sylar SHARED
-    config.h    
-    fiber.h
-    iomanager.h
-    log.h
-    marco.h
-    mutex.h
-    scheduler.h
-    singleton.h
-    sylar.h
-    thread.h
-    timer.h
-    util.h
-    config.cc
-    fiber.cc
-    iomanager.cc
-    log.cc
-    mutex.cc
-    scheduler.cc
-    thread.cc
-    timer.cc
-    util.cc
+    include/config.h    
+    include/fdmanager.h
+    include/fiber.h
+    include/hook.h
+    include/iomanager.h
+    include/log.h
+    include/marco.h
+    include/mutex.h
+    include/noncopyable.h
+    include/scheduler.h
+    include/singleton.h
+    include/sylar.h
+    include/thread.h
+    include/timer.h
+    include/util.h
+    src/config.cc
+    src/fdmanager.cc
+    src/fiber.cc
+    src/hook.cc
+    src/iomanager.cc
+    src/log.cc
+    src/mutex.cc
+    src/scheduler.cc
+    src/thread.cc
+    src/timer.cc
+    src/util.cc
 )

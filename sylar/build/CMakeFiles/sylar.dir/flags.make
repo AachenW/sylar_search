@@ -6,5 +6,5 @@ CXX_FLAGS =  -rdynamic -O3 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror 
 
 CXX_DEFINES = -Dsylar_EXPORTS
 
-CXX_INCLUDES = -I/home/edinw/workspace/sylar/sylar/CMAKE_CURRENT_LIST/.. -I/usr/local/boost/include 
+CXX_INCLUDES = -I/home/edinw/workspace/sylar/sylar/. -I/home/edinw/workspace/sylar/sylar/include -I/home/edinw/workspace/sylar/sylar/src -I/usr/local/boost/include 
 
