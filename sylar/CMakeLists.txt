@@ -19,11 +19,17 @@ message("***", $(YAMLCPP))
 
 add_library(sylar SHARED
     include/address.h
+    include/byte_array.h
     include/config.h    
     include/endian_sylar.h
     include/fd_manager.h
     include/fiber.h
     include/hook.h
+    include/http/http.h
+    include/http/http_parser.h
+    include/http/http11_common.h
+    include/http/http11_parser.h
+    include/http/httpclient_parser.h
     include/io_manager.h
     include/log.h
     include/marco.h
@@ -31,19 +37,26 @@ add_library(sylar SHARED
     include/noncopyable.h
     include/scheduler.h
     include/singleton.h
+    include/socket.h
     include/sylar.h
     include/thread.h
     include/timer.h
     include/util.h
     src/address.cc
+    src/byte_array.cc
     src/config.cc
     src/fd_manager.cc
     src/fiber.cc
     src/hook.cc
+    src/http/http.cc    
+    src/http/http_parser.cc
+    src/http/http11_parser.rl.cc
+    src/http/httpclient_parser.rl.cc
     src/io_manager.cc
     src/log.cc
     src/mutex.cc
     src/scheduler.cc
+    src/socket.cc
     src/thread.cc
     src/timer.cc
     src/util.cc

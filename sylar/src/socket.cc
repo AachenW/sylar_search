@@ -91,10 +91,11 @@ void Socket::setRecvTimeout(int64_t v) {
 
 bool Socket::getOption(int level, int option, void *result, socklen_t *len) {
     int rt = getsockopt(m_sock, level, option, result, (socklen_t*)len);
-    if (rt) {
-        SYLAR_LOG_DEBUG(g_logger) << "getOption sock=" << m_sock << " level="
-                                  << level << " option=" << option << " errno="
-                                  << errno << " errstr=" << strerror(errno);
+    if(rt) {
+        SYLAR_LOG_DEBUG(g_logger) << "getOption sock=" << m_sock 
+                                  << " level=" << level << " option=" << option
+                                  << " errno=" << errno 
+                                  << " errstr=" << strerror(errno);
         return false;
     }
     return true;
@@ -245,7 +246,7 @@ int Socket::send(const iovec *buffers, size_t length, int flags) {
 
 int Socket::sendTo(const void *buffer, size_t length, 
             const Address::ptr to, int flags) {
-    if (isConnected) {
+    if (isConnected()) {
         return ::sendto(m_sock, buffer, length, flags, 
                         to->getAddr(), to->getAddrLen());
     }
@@ -289,6 +290,7 @@ int Socket::recvFrom(void *buffer, size_t length,
         socklen_t len = from->getAddrLen();
         return ::recvfrom(m_sock, buffer, length, flags, from->getAddr(), &len);
     }
+    return -1;
 }
 
 int Socket::recvFrom(iovec *buffers, size_t length, 
@@ -377,32 +379,49 @@ bool Socket::isValid() const {
     return m_sock != -1;
 }
 
-int Socket::getError() const {
-    
+int Socket::getError() {
+    int error = 0;
+    socklen_t len = sizeof(error);
+    if (!getOption(SOL_SOCKET, SO_ERROR, &error, &len)) {
+        error = errno;
+    }
+    return error;   
 }
 
 std::ostream &Socket::dump(std::ostream &os) const {
-
+    os << "[Socket sock=" << m_sock << " is_connected=" << m_isConnected
+       << " family=" << m_family << " type=" << m_type 
+       << " protocol=" << m_protocol;
+    if (m_localAddress) {
+        os << " local_address=" << m_localAddress->toString();
+    }
+    if (m_remoteAddress) {
+        os << " remote_address=" << m_remoteAddress->toString();
+    }
+    os << "]";
+    return os;
 }
 
 std::string Socket::toString() const {
-
+    std::stringstream ss;
+    dump(ss);
+    return ss.str();
 }
 
 bool Socket::cancelRead() {
-
+    return IOManager::GetThis()->cancelEvent(m_sock, IOManager::READ);
 }
 
 bool Socket::cancelWrite() {
-
+    return IOManager::GetThis()->cancelEvent(m_sock, IOManager::WRITE);
 }
 
 bool Socket::cancelAccept() {
-
+    return IOManager::GetThis()->cancelEvent(m_sock, IOManager::READ);
 }
 
 bool Socket::cancelAll() {
-
+    return IOManager::GetThis()->cancelAll(m_sock);
 }
 
 void Socket::initSock() {

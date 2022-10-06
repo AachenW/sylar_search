@@ -150,6 +150,33 @@ src/address.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/address.cc.s
 .PHONY : src/address.cc.s
 
+src/byte_array.o: src/byte_array.cc.o
+
+.PHONY : src/byte_array.o
+
+# target to build an object file
+src/byte_array.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/byte_array.cc.o
+.PHONY : src/byte_array.cc.o
+
+src/byte_array.i: src/byte_array.cc.i
+
+.PHONY : src/byte_array.i
+
+# target to preprocess a source file
+src/byte_array.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/byte_array.cc.i
+.PHONY : src/byte_array.cc.i
+
+src/byte_array.s: src/byte_array.cc.s
+
+.PHONY : src/byte_array.s
+
+# target to generate assembly for a file
+src/byte_array.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/byte_array.cc.s
+.PHONY : src/byte_array.cc.s
+
 src/config.o: src/config.cc.o
 
 .PHONY : src/config.o
@@ -257,6 +284,114 @@ src/hook.s: src/hook.cc.s
 src/hook.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/hook.cc.s
 .PHONY : src/hook.cc.s
+
+src/http/http.o: src/http/http.cc.o
+
+.PHONY : src/http/http.o
+
+# target to build an object file
+src/http/http.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http.cc.o
+.PHONY : src/http/http.cc.o
+
+src/http/http.i: src/http/http.cc.i
+
+.PHONY : src/http/http.i
+
+# target to preprocess a source file
+src/http/http.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http.cc.i
+.PHONY : src/http/http.cc.i
+
+src/http/http.s: src/http/http.cc.s
+
+.PHONY : src/http/http.s
+
+# target to generate assembly for a file
+src/http/http.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http.cc.s
+.PHONY : src/http/http.cc.s
+
+src/http/http11_parser.rl.o: src/http/http11_parser.rl.cc.o
+
+.PHONY : src/http/http11_parser.rl.o
+
+# target to build an object file
+src/http/http11_parser.rl.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http11_parser.rl.cc.o
+.PHONY : src/http/http11_parser.rl.cc.o
+
+src/http/http11_parser.rl.i: src/http/http11_parser.rl.cc.i
+
+.PHONY : src/http/http11_parser.rl.i
+
+# target to preprocess a source file
+src/http/http11_parser.rl.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http11_parser.rl.cc.i
+.PHONY : src/http/http11_parser.rl.cc.i
+
+src/http/http11_parser.rl.s: src/http/http11_parser.rl.cc.s
+
+.PHONY : src/http/http11_parser.rl.s
+
+# target to generate assembly for a file
+src/http/http11_parser.rl.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http11_parser.rl.cc.s
+.PHONY : src/http/http11_parser.rl.cc.s
+
+src/http/http_parser.o: src/http/http_parser.cc.o
+
+.PHONY : src/http/http_parser.o
+
+# target to build an object file
+src/http/http_parser.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_parser.cc.o
+.PHONY : src/http/http_parser.cc.o
+
+src/http/http_parser.i: src/http/http_parser.cc.i
+
+.PHONY : src/http/http_parser.i
+
+# target to preprocess a source file
+src/http/http_parser.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_parser.cc.i
+.PHONY : src/http/http_parser.cc.i
+
+src/http/http_parser.s: src/http/http_parser.cc.s
+
+.PHONY : src/http/http_parser.s
+
+# target to generate assembly for a file
+src/http/http_parser.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_parser.cc.s
+.PHONY : src/http/http_parser.cc.s
+
+src/http/httpclient_parser.rl.o: src/http/httpclient_parser.rl.cc.o
+
+.PHONY : src/http/httpclient_parser.rl.o
+
+# target to build an object file
+src/http/httpclient_parser.rl.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/httpclient_parser.rl.cc.o
+.PHONY : src/http/httpclient_parser.rl.cc.o
+
+src/http/httpclient_parser.rl.i: src/http/httpclient_parser.rl.cc.i
+
+.PHONY : src/http/httpclient_parser.rl.i
+
+# target to preprocess a source file
+src/http/httpclient_parser.rl.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/httpclient_parser.rl.cc.i
+.PHONY : src/http/httpclient_parser.rl.cc.i
+
+src/http/httpclient_parser.rl.s: src/http/httpclient_parser.rl.cc.s
+
+.PHONY : src/http/httpclient_parser.rl.s
+
+# target to generate assembly for a file
+src/http/httpclient_parser.rl.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/httpclient_parser.rl.cc.s
+.PHONY : src/http/httpclient_parser.rl.cc.s
 
 src/io_manager.o: src/io_manager.cc.o
 
@@ -366,6 +501,33 @@ src/scheduler.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/scheduler.cc.s
 .PHONY : src/scheduler.cc.s
 
+src/socket.o: src/socket.cc.o
+
+.PHONY : src/socket.o
+
+# target to build an object file
+src/socket.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/socket.cc.o
+.PHONY : src/socket.cc.o
+
+src/socket.i: src/socket.cc.i
+
+.PHONY : src/socket.i
+
+# target to preprocess a source file
+src/socket.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/socket.cc.i
+.PHONY : src/socket.cc.i
+
+src/socket.s: src/socket.cc.s
+
+.PHONY : src/socket.s
+
+# target to generate assembly for a file
+src/socket.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/socket.cc.s
+.PHONY : src/socket.cc.s
+
 src/thread.o: src/thread.cc.o
 
 .PHONY : src/thread.o
@@ -459,6 +621,9 @@ help:
 	@echo "... src/address.o"
 	@echo "... src/address.i"
 	@echo "... src/address.s"
+	@echo "... src/byte_array.o"
+	@echo "... src/byte_array.i"
+	@echo "... src/byte_array.s"
 	@echo "... src/config.o"
 	@echo "... src/config.i"
 	@echo "... src/config.s"
@@ -471,6 +636,18 @@ help:
 	@echo "... src/hook.o"
 	@echo "... src/hook.i"
 	@echo "... src/hook.s"
+	@echo "... src/http/http.o"
+	@echo "... src/http/http.i"
+	@echo "... src/http/http.s"
+	@echo "... src/http/http11_parser.rl.o"
+	@echo "... src/http/http11_parser.rl.i"
+	@echo "... src/http/http11_parser.rl.s"
+	@echo "... src/http/http_parser.o"
+	@echo "... src/http/http_parser.i"
+	@echo "... src/http/http_parser.s"
+	@echo "... src/http/httpclient_parser.rl.o"
+	@echo "... src/http/httpclient_parser.rl.i"
+	@echo "... src/http/httpclient_parser.rl.s"
 	@echo "... src/io_manager.o"
 	@echo "... src/io_manager.i"
 	@echo "... src/io_manager.s"
@@ -483,6 +660,9 @@ help:
 	@echo "... src/scheduler.o"
 	@echo "... src/scheduler.i"
 	@echo "... src/scheduler.s"
+	@echo "... src/socket.o"
+	@echo "... src/socket.i"
+	@echo "... src/socket.s"
 	@echo "... src/thread.o"
 	@echo "... src/thread.i"
 	@echo "... src/thread.s"
