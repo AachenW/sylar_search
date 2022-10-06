@@ -1,18 +1,19 @@
 #ifndef __SYLAR_LOG_H__
 #define __SYLAR_LOG_H__
 
-#include <string>
-#include <stdint.h>
-#include <memory>
-#include <list>
-#include <sstream>
 #include <fstream>
-#include <vector>
-#include <stdarg.h>
+#include <list>
 #include <map>
-#include "util.h"
-#include "singleton.h"
-#include "thread.h"
+#include <memory>
+#include <sstream>
+#include <stdarg.h>
+#include <stdint.h>
+#include <string>
+#include <vector>
+
+#include "include/singleton.h"
+#include "include/thread.h"
+#include "include/util.h"
 
 #define SYLAR_LOG_LEVEL(logger, level) \
     if(logger->getLevel() <= level) \

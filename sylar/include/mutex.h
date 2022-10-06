@@ -1,14 +1,15 @@
 #ifndef __SYLAR_MUTEX_H_
 #define __SYLAR_MUTEX_H_
 
-#include <thread>
+#include <atomic>
 #include <functional>
 #include <memory>
 #include <pthread.h>
 #include <semaphore.h>
 #include <stdint.h>
-#include <atomic>
-#include "noncopyable.h"
+#include <thread>
+
+#include "include/noncopyable.h"
 
 namespace sylar {
 

@@ -18,11 +18,13 @@ endif()
 message("***", $(YAMLCPP))
 
 add_library(sylar SHARED
+    include/address.h
     include/config.h    
-    include/fdmanager.h
+    include/endian_sylar.h
+    include/fd_manager.h
     include/fiber.h
     include/hook.h
-    include/iomanager.h
+    include/io_manager.h
     include/log.h
     include/marco.h
     include/mutex.h
@@ -33,11 +35,12 @@ add_library(sylar SHARED
     include/thread.h
     include/timer.h
     include/util.h
+    src/address.cc
     src/config.cc
-    src/fdmanager.cc
+    src/fd_manager.cc
     src/fiber.cc
     src/hook.cc
-    src/iomanager.cc
+    src/io_manager.cc
     src/log.cc
     src/mutex.cc
     src/scheduler.cc
