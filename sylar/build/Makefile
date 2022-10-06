@@ -123,6 +123,33 @@ sylar/fast:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/build
 .PHONY : sylar/fast
 
+src/address.o: src/address.cc.o
+
+.PHONY : src/address.o
+
+# target to build an object file
+src/address.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/address.cc.o
+.PHONY : src/address.cc.o
+
+src/address.i: src/address.cc.i
+
+.PHONY : src/address.i
+
+# target to preprocess a source file
+src/address.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/address.cc.i
+.PHONY : src/address.cc.i
+
+src/address.s: src/address.cc.s
+
+.PHONY : src/address.s
+
+# target to generate assembly for a file
+src/address.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/address.cc.s
+.PHONY : src/address.cc.s
+
 src/config.o: src/config.cc.o
 
 .PHONY : src/config.o
@@ -150,32 +177,32 @@ src/config.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/config.cc.s
 .PHONY : src/config.cc.s
 
-src/fdmanager.o: src/fdmanager.cc.o
+src/fd_manager.o: src/fd_manager.cc.o
 
-.PHONY : src/fdmanager.o
+.PHONY : src/fd_manager.o
 
 # target to build an object file
-src/fdmanager.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/fdmanager.cc.o
-.PHONY : src/fdmanager.cc.o
+src/fd_manager.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/fd_manager.cc.o
+.PHONY : src/fd_manager.cc.o
 
-src/fdmanager.i: src/fdmanager.cc.i
+src/fd_manager.i: src/fd_manager.cc.i
 
-.PHONY : src/fdmanager.i
+.PHONY : src/fd_manager.i
 
 # target to preprocess a source file
-src/fdmanager.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/fdmanager.cc.i
-.PHONY : src/fdmanager.cc.i
+src/fd_manager.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/fd_manager.cc.i
+.PHONY : src/fd_manager.cc.i
 
-src/fdmanager.s: src/fdmanager.cc.s
+src/fd_manager.s: src/fd_manager.cc.s
 
-.PHONY : src/fdmanager.s
+.PHONY : src/fd_manager.s
 
 # target to generate assembly for a file
-src/fdmanager.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/fdmanager.cc.s
-.PHONY : src/fdmanager.cc.s
+src/fd_manager.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/fd_manager.cc.s
+.PHONY : src/fd_manager.cc.s
 
 src/fiber.o: src/fiber.cc.o
 
@@ -231,32 +258,32 @@ src/hook.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/hook.cc.s
 .PHONY : src/hook.cc.s
 
-src/iomanager.o: src/iomanager.cc.o
+src/io_manager.o: src/io_manager.cc.o
 
-.PHONY : src/iomanager.o
+.PHONY : src/io_manager.o
 
 # target to build an object file
-src/iomanager.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/iomanager.cc.o
-.PHONY : src/iomanager.cc.o
+src/io_manager.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/io_manager.cc.o
+.PHONY : src/io_manager.cc.o
 
-src/iomanager.i: src/iomanager.cc.i
+src/io_manager.i: src/io_manager.cc.i
 
-.PHONY : src/iomanager.i
+.PHONY : src/io_manager.i
 
 # target to preprocess a source file
-src/iomanager.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/iomanager.cc.i
-.PHONY : src/iomanager.cc.i
+src/io_manager.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/io_manager.cc.i
+.PHONY : src/io_manager.cc.i
 
-src/iomanager.s: src/iomanager.cc.s
+src/io_manager.s: src/io_manager.cc.s
 
-.PHONY : src/iomanager.s
+.PHONY : src/io_manager.s
 
 # target to generate assembly for a file
-src/iomanager.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/iomanager.cc.s
-.PHONY : src/iomanager.cc.s
+src/io_manager.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/io_manager.cc.s
+.PHONY : src/io_manager.cc.s
 
 src/log.o: src/log.cc.o
 
@@ -429,21 +456,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... sylar"
 	@echo "... edit_cache"
+	@echo "... src/address.o"
+	@echo "... src/address.i"
+	@echo "... src/address.s"
 	@echo "... src/config.o"
 	@echo "... src/config.i"
 	@echo "... src/config.s"
-	@echo "... src/fdmanager.o"
-	@echo "... src/fdmanager.i"
-	@echo "... src/fdmanager.s"
+	@echo "... src/fd_manager.o"
+	@echo "... src/fd_manager.i"
+	@echo "... src/fd_manager.s"
 	@echo "... src/fiber.o"
 	@echo "... src/fiber.i"
 	@echo "... src/fiber.s"
 	@echo "... src/hook.o"
 	@echo "... src/hook.i"
 	@echo "... src/hook.s"
-	@echo "... src/iomanager.o"
-	@echo "... src/iomanager.i"
-	@echo "... src/iomanager.s"
+	@echo "... src/io_manager.o"
+	@echo "... src/io_manager.i"
+	@echo "... src/io_manager.s"
 	@echo "... src/log.o"
 	@echo "... src/log.i"
 	@echo "... src/log.s"
