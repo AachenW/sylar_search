@@ -372,6 +372,13 @@ protected:
     Address::ptr m_localAddress;    // 本地地址
 };
 
+/**
+ * @brief 流式输出socket
+ * @param[in, out] os 输出流
+ * @param[in] sock Socket类
+ */
+std::ostream& operator<<(std::ostream& os, const Socket& sock);
+
 } // namespace sylar
 
 #endif 

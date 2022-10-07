@@ -27,9 +27,12 @@ add_library(sylar SHARED
     include/hook.h
     include/http/http.h
     include/http/http_parser.h
+    include/http/http_server.h
+    include/http/http_session.h
     include/http/http11_common.h
     include/http/http11_parser.h
     include/http/httpclient_parser.h
+    include/http/servlet.h
     include/io_manager.h
     include/log.h
     include/marco.h
@@ -38,6 +41,9 @@ add_library(sylar SHARED
     include/scheduler.h
     include/singleton.h
     include/socket.h
+    include/stream.h
+    include/streams/socket_stream.h
+    include/tcp_server.h
     include/sylar.h
     include/thread.h
     include/timer.h
@@ -50,13 +56,19 @@ add_library(sylar SHARED
     src/hook.cc
     src/http/http.cc    
     src/http/http_parser.cc
+    src/http/http_server.cc
+    src/http/http_session.cc
     src/http/http11_parser.rl.cc
     src/http/httpclient_parser.rl.cc
+    src/http/servlet.cc
     src/io_manager.cc
     src/log.cc
     src/mutex.cc
     src/scheduler.cc
     src/socket.cc
+    src/stream.cc
+    src/streams/socket_stream.cc
+    src/tcp_server.cc
     src/thread.cc
     src/timer.cc
     src/util.cc

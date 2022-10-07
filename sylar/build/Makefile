@@ -366,6 +366,60 @@ src/http/http_parser.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_parser.cc.s
 .PHONY : src/http/http_parser.cc.s
 
+src/http/http_server.o: src/http/http_server.cc.o
+
+.PHONY : src/http/http_server.o
+
+# target to build an object file
+src/http/http_server.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_server.cc.o
+.PHONY : src/http/http_server.cc.o
+
+src/http/http_server.i: src/http/http_server.cc.i
+
+.PHONY : src/http/http_server.i
+
+# target to preprocess a source file
+src/http/http_server.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_server.cc.i
+.PHONY : src/http/http_server.cc.i
+
+src/http/http_server.s: src/http/http_server.cc.s
+
+.PHONY : src/http/http_server.s
+
+# target to generate assembly for a file
+src/http/http_server.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_server.cc.s
+.PHONY : src/http/http_server.cc.s
+
+src/http/http_session.o: src/http/http_session.cc.o
+
+.PHONY : src/http/http_session.o
+
+# target to build an object file
+src/http/http_session.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_session.cc.o
+.PHONY : src/http/http_session.cc.o
+
+src/http/http_session.i: src/http/http_session.cc.i
+
+.PHONY : src/http/http_session.i
+
+# target to preprocess a source file
+src/http/http_session.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_session.cc.i
+.PHONY : src/http/http_session.cc.i
+
+src/http/http_session.s: src/http/http_session.cc.s
+
+.PHONY : src/http/http_session.s
+
+# target to generate assembly for a file
+src/http/http_session.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_session.cc.s
+.PHONY : src/http/http_session.cc.s
+
 src/http/httpclient_parser.rl.o: src/http/httpclient_parser.rl.cc.o
 
 .PHONY : src/http/httpclient_parser.rl.o
@@ -392,6 +446,33 @@ src/http/httpclient_parser.rl.s: src/http/httpclient_parser.rl.cc.s
 src/http/httpclient_parser.rl.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/httpclient_parser.rl.cc.s
 .PHONY : src/http/httpclient_parser.rl.cc.s
+
+src/http/servlet.o: src/http/servlet.cc.o
+
+.PHONY : src/http/servlet.o
+
+# target to build an object file
+src/http/servlet.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/servlet.cc.o
+.PHONY : src/http/servlet.cc.o
+
+src/http/servlet.i: src/http/servlet.cc.i
+
+.PHONY : src/http/servlet.i
+
+# target to preprocess a source file
+src/http/servlet.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/servlet.cc.i
+.PHONY : src/http/servlet.cc.i
+
+src/http/servlet.s: src/http/servlet.cc.s
+
+.PHONY : src/http/servlet.s
+
+# target to generate assembly for a file
+src/http/servlet.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/servlet.cc.s
+.PHONY : src/http/servlet.cc.s
 
 src/io_manager.o: src/io_manager.cc.o
 
@@ -528,6 +609,87 @@ src/socket.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/socket.cc.s
 .PHONY : src/socket.cc.s
 
+src/stream.o: src/stream.cc.o
+
+.PHONY : src/stream.o
+
+# target to build an object file
+src/stream.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/stream.cc.o
+.PHONY : src/stream.cc.o
+
+src/stream.i: src/stream.cc.i
+
+.PHONY : src/stream.i
+
+# target to preprocess a source file
+src/stream.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/stream.cc.i
+.PHONY : src/stream.cc.i
+
+src/stream.s: src/stream.cc.s
+
+.PHONY : src/stream.s
+
+# target to generate assembly for a file
+src/stream.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/stream.cc.s
+.PHONY : src/stream.cc.s
+
+src/streams/socket_stream.o: src/streams/socket_stream.cc.o
+
+.PHONY : src/streams/socket_stream.o
+
+# target to build an object file
+src/streams/socket_stream.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/streams/socket_stream.cc.o
+.PHONY : src/streams/socket_stream.cc.o
+
+src/streams/socket_stream.i: src/streams/socket_stream.cc.i
+
+.PHONY : src/streams/socket_stream.i
+
+# target to preprocess a source file
+src/streams/socket_stream.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/streams/socket_stream.cc.i
+.PHONY : src/streams/socket_stream.cc.i
+
+src/streams/socket_stream.s: src/streams/socket_stream.cc.s
+
+.PHONY : src/streams/socket_stream.s
+
+# target to generate assembly for a file
+src/streams/socket_stream.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/streams/socket_stream.cc.s
+.PHONY : src/streams/socket_stream.cc.s
+
+src/tcp_server.o: src/tcp_server.cc.o
+
+.PHONY : src/tcp_server.o
+
+# target to build an object file
+src/tcp_server.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/tcp_server.cc.o
+.PHONY : src/tcp_server.cc.o
+
+src/tcp_server.i: src/tcp_server.cc.i
+
+.PHONY : src/tcp_server.i
+
+# target to preprocess a source file
+src/tcp_server.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/tcp_server.cc.i
+.PHONY : src/tcp_server.cc.i
+
+src/tcp_server.s: src/tcp_server.cc.s
+
+.PHONY : src/tcp_server.s
+
+# target to generate assembly for a file
+src/tcp_server.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/tcp_server.cc.s
+.PHONY : src/tcp_server.cc.s
+
 src/thread.o: src/thread.cc.o
 
 .PHONY : src/thread.o
@@ -645,9 +807,18 @@ help:
 	@echo "... src/http/http_parser.o"
 	@echo "... src/http/http_parser.i"
 	@echo "... src/http/http_parser.s"
+	@echo "... src/http/http_server.o"
+	@echo "... src/http/http_server.i"
+	@echo "... src/http/http_server.s"
+	@echo "... src/http/http_session.o"
+	@echo "... src/http/http_session.i"
+	@echo "... src/http/http_session.s"
 	@echo "... src/http/httpclient_parser.rl.o"
 	@echo "... src/http/httpclient_parser.rl.i"
 	@echo "... src/http/httpclient_parser.rl.s"
+	@echo "... src/http/servlet.o"
+	@echo "... src/http/servlet.i"
+	@echo "... src/http/servlet.s"
 	@echo "... src/io_manager.o"
 	@echo "... src/io_manager.i"
 	@echo "... src/io_manager.s"
@@ -663,6 +834,15 @@ help:
 	@echo "... src/socket.o"
 	@echo "... src/socket.i"
 	@echo "... src/socket.s"
+	@echo "... src/stream.o"
+	@echo "... src/stream.i"
+	@echo "... src/stream.s"
+	@echo "... src/streams/socket_stream.o"
+	@echo "... src/streams/socket_stream.i"
+	@echo "... src/streams/socket_stream.s"
+	@echo "... src/tcp_server.o"
+	@echo "... src/tcp_server.i"
+	@echo "... src/tcp_server.s"
 	@echo "... src/thread.o"
 	@echo "... src/thread.i"
 	@echo "... src/thread.s"
