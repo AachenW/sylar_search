@@ -26,6 +26,7 @@ add_library(sylar SHARED
     include/fiber.h
     include/hook.h
     include/http/http.h
+    include/http/http_connection.h
     include/http/http_parser.h
     include/http/http_server.h
     include/http/http_session.h
@@ -55,6 +56,7 @@ add_library(sylar SHARED
     src/fiber.cc
     src/hook.cc
     src/http/http.cc    
+    src/http/http_connection.cc
     src/http/http_parser.cc
     src/http/http_server.cc
     src/http/http_session.cc

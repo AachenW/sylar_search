@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/edinw/workspace/sylar/sylar/src/hook.cc" "/home/edinw/workspace/sylar/sylar/build/CMakeFiles/sylar.dir/src/hook.cc.o"
   "/home/edinw/workspace/sylar/sylar/src/http/http.cc" "/home/edinw/workspace/sylar/sylar/build/CMakeFiles/sylar.dir/src/http/http.cc.o"
   "/home/edinw/workspace/sylar/sylar/src/http/http11_parser.rl.cc" "/home/edinw/workspace/sylar/sylar/build/CMakeFiles/sylar.dir/src/http/http11_parser.rl.cc.o"
+  "/home/edinw/workspace/sylar/sylar/src/http/http_connection.cc" "/home/edinw/workspace/sylar/sylar/build/CMakeFiles/sylar.dir/src/http/http_connection.cc.o"
   "/home/edinw/workspace/sylar/sylar/src/http/http_parser.cc" "/home/edinw/workspace/sylar/sylar/build/CMakeFiles/sylar.dir/src/http/http_parser.cc.o"
   "/home/edinw/workspace/sylar/sylar/src/http/http_server.cc" "/home/edinw/workspace/sylar/sylar/build/CMakeFiles/sylar.dir/src/http/http_server.cc.o"
   "/home/edinw/workspace/sylar/sylar/src/http/http_session.cc" "/home/edinw/workspace/sylar/sylar/build/CMakeFiles/sylar.dir/src/http/http_session.cc.o"

@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sylar.dir/src/fiber.cc.o"
   "CMakeFiles/sylar.dir/src/hook.cc.o"
   "CMakeFiles/sylar.dir/src/http/http.cc.o"
+  "CMakeFiles/sylar.dir/src/http/http_connection.cc.o"
   "CMakeFiles/sylar.dir/src/http/http_parser.cc.o"
   "CMakeFiles/sylar.dir/src/http/http_server.cc.o"
   "CMakeFiles/sylar.dir/src/http/http_session.cc.o"

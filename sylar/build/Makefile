@@ -339,6 +339,33 @@ src/http/http11_parser.rl.cc.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http11_parser.rl.cc.s
 .PHONY : src/http/http11_parser.rl.cc.s
 
+src/http/http_connection.o: src/http/http_connection.cc.o
+
+.PHONY : src/http/http_connection.o
+
+# target to build an object file
+src/http/http_connection.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_connection.cc.o
+.PHONY : src/http/http_connection.cc.o
+
+src/http/http_connection.i: src/http/http_connection.cc.i
+
+.PHONY : src/http/http_connection.i
+
+# target to preprocess a source file
+src/http/http_connection.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_connection.cc.i
+.PHONY : src/http/http_connection.cc.i
+
+src/http/http_connection.s: src/http/http_connection.cc.s
+
+.PHONY : src/http/http_connection.s
+
+# target to generate assembly for a file
+src/http/http_connection.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/src/http/http_connection.cc.s
+.PHONY : src/http/http_connection.cc.s
+
 src/http/http_parser.o: src/http/http_parser.cc.o
 
 .PHONY : src/http/http_parser.o
@@ -804,6 +831,9 @@ help:
 	@echo "... src/http/http11_parser.rl.o"
 	@echo "... src/http/http11_parser.rl.i"
 	@echo "... src/http/http11_parser.rl.s"
+	@echo "... src/http/http_connection.o"
+	@echo "... src/http/http_connection.i"
+	@echo "... src/http/http_connection.s"
 	@echo "... src/http/http_parser.o"
 	@echo "... src/http/http_parser.i"
 	@echo "... src/http/http_parser.s"

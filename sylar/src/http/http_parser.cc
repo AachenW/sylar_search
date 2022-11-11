@@ -46,17 +46,17 @@ struct _RequestSizeIniter {
         });
 
         g_http_request_max_body_size->addListener([](const uint64_t &old_value, 
-                                                   const uint64_t &new_value) {
+                                                     const uint64_t &new_value) {
             s_http_request_max_body_size = new_value;
         });
 
         g_http_response_buffer_size->addListener([](const uint64_t &old_value, 
-                                                   const uint64_t &new_value) {
+                                                    const uint64_t &new_value) {
             s_http_response_buffer_size = new_value;
         });
 
         g_http_response_max_body_size->addListener([](const uint64_t &old_value, 
-                                                   const uint64_t &new_value) {
+                                                      const uint64_t &new_value) {
             s_http_response_max_body_size = new_value;
         });
     }
@@ -112,7 +112,6 @@ void on_request_version(void *data, const char *at, size_t length) {
 }
 
 void on_request_header_done(void *data, const char *at, size_t length) {
-
 }
 
 void on_request_http_field(void *data, const char *field, size_t flen,
@@ -141,8 +140,13 @@ HttpRequestParser::HttpRequestParser()
     m_parser.data = this;
 }
 
+//1: 成功
+//-1: 有错误
+//>0: 已处理的字节数，且data有效数据为len - v;
 size_t HttpRequestParser::execute(char *data, size_t len) {
-    return 0;
+    size_t offset = http_parser_execute(&m_parser, data, len, 0);
+    memmove(data, data + offset, (len - offset));
+    return offset;
 }
 
 int HttpRequestParser::isFinished() {
@@ -154,7 +158,7 @@ int HttpRequestParser::hasError() {
 }
 
 uint64_t HttpRequestParser::getContentLength() {
-    return 0;
+    return m_data->getHeaderAs<uint64_t>("content-length", 0);
 }
 
 uint64_t HttpRequestParser::GetHttpRequestBufferSize() {
@@ -177,7 +181,6 @@ void on_response_status(void *data, const char *at, size_t length) {
 }
 
 void on_response_chunk(void *data, const char *at, size_t length) {
-
 }
 
 void on_response_version(void *data, const char *at, size_t length) {
@@ -197,11 +200,9 @@ void on_response_version(void *data, const char *at, size_t length) {
 }
 
 void on_response_header_done(void *data, const char *at, size_t length) {
-
 }
 
 void on_response_last_chunk(void *data, const char *at, size_t length) {
-
 }
 
 void on_response_http_field(void *data, const char *field, size_t flen,
@@ -230,7 +231,12 @@ HttpResponseParser::HttpResponseParser()
 }
 
 size_t HttpResponseParser::execute(char *data, size_t len, bool chunck) {
-    return 0;
+    if (chunck) {
+        httpclient_parser_init(&m_parser);
+    }
+    size_t offset = httpclient_parser_execute(&m_parser, data, len, 0);
+    memmove(data, data + offset, len - offset);
+    return offset;
 }
 
 int HttpResponseParser::isFinished() {

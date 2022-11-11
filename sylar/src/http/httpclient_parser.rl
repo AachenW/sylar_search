@@ -185,6 +185,11 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
     const char *p, *pe;
     int cs = parser->cs;
 
+    parser->nread = 0;
+    parser->mark = 0;
+    parser->field_len = 0;
+    parser->field_start = 0;
+    
     assert(off <= len && "offset past end of buffer");
 
     p = buffer+off;
@@ -206,10 +211,10 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
     check(parser->field_len <= len, "field has length longer than whole buffer");
     check(parser->field_start < len, "field starts after buffer end");
 
-    if(parser->body_start) {
-        /* final \r\n combo encountered so stop right here */
-        parser->nread++;
-    }
+    // if(parser->body_start) {
+    //    /* final \r\n combo encountered so stop right here */
+    //    parser->nread++;
+    // }
 
     return(parser->nread);
 

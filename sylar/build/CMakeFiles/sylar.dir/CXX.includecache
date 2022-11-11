@@ -138,6 +138,14 @@ sys/types.h
 include/http/http11_common.h
 .././include/http/include/http/http11_common.h
 
+.././include/http/http_connection.h
+include/streams/socket_stream.h
+.././include/http/include/streams/socket_stream.h
+include/http/http.h
+.././include/http/include/http/http.h
+include/uri.h
+.././include/http/include/uri.h
+
 .././include/http/http_parser.h
 include/http/http.h
 .././include/http/include/http/http.h
@@ -320,6 +328,16 @@ vector
 include/mutex.h
 .././include/include/mutex.h
 
+.././include/uri.h
+memory
+-
+string.h
+-
+stdint.h
+-
+include/address.h
+.././include/include/address.h
+
 .././include/util.h
 stdio.h
 -
@@ -443,6 +461,14 @@ ctype.h
 -
 string.h
 -
+
+/home/edinw/workspace/sylar/sylar/src/http/http_connection.cc
+include/http/http_connection.h
+/home/edinw/workspace/sylar/sylar/src/http/include/http/http_connection.h
+include/http/http_parser.h
+/home/edinw/workspace/sylar/sylar/src/http/include/http/http_parser.h
+include/log.h
+/home/edinw/workspace/sylar/sylar/src/http/include/log.h
 
 /home/edinw/workspace/sylar/sylar/src/http/http_parser.cc
 string.h
